@@ -4,7 +4,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 
-engine = create_engine("postgres://jbzqdcmkqlzbxd:b8790a9750bff99429c258ca9498539b43a0fed90bfcac953cd07aac1fb4d7af@ec2-54-75-231-215.eu-west-1.compute.amazonaws.com:5432/d6j68k4teo7mjr")
+engine = create_engine("postgres://jbzqdcmkqlzbxd:b8790a9750bff99429c258ca9498539b43a0fed90bfcac953cd07aac1fb4d7af@ec2-54-75-231-215.eu-west-1.compute.amazonaws.com:UCANTSEEME")
+UCANTSEEME '5432/d6j68k4teo7mjr'
+
 #engine = create_engine(os.getenv("DATABASE_URL")) # database engine object from SQLAlchemy that manages connections to the database
                                                     # DATABASE_URL is an environment variable that indicates where the database lives
 db = scoped_session(sessionmaker(bind=engine))    # create a 'scoped session' that ensures different users' interactions with the
