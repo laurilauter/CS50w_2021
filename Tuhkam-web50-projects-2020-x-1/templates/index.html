@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="title">
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
+      </div>
+    <div class="parent">
+            <div class="child1">
+              <div class="box">
+              {% if session.get('logged_in') %}
+                <p>Please continue to Search page to read book reviews and write some yourself.</p>
+                
+                <p>You are able to type in the ISBN number of a book, the title of a book, or the author of a book.</p>
+                  
+                   <p>Have fun!</p>
+                <h3 class="center"><a href="{{ url_for('books') }}">Search</a></h3>
+              {% else %}
+
+                  <p> You will be able to register for this website and then
+                log in using your username and password.
+                  Once you're in, you can search for books, leave reviews for
+                individual books, and see the reviews written by other people.</p>
+
+              {% endif %}
+            
+
+              {% if not session.get('logged_in') %}
+                <p>if you have no account yet, please register below.</p>
+                <a href="{{ (url_for('register')) }}"><h3>Register</h3></a>
+                <p>or</p>
+                <a href="{{ (url_for('login')) }}"><h3>Login</h3></a>
+              {% else %}
+              {% endif %}
+            </div>
+            </div>
+
+
+            <div class="child2">
+              <div class="img">
+                  <img width="300" src="{{ (url_for('static', filename = 'img/books_bw.jpg')) }}" />
+                </div>
+            </div>
+      
+            
+
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "foodie/layout.html" %}
+
+
+{% block body %}
+
+
+    {% if message %}
+            <div>{{ message }}</div>
+    {% endif %}
+
+    {% load static %}
+
+
+    <!--check if user logged in-->
+
+    {% if user.is_authenticated %}
+
+    <h1>Welcome to Foodie</h1>
+    <h5>Here is a list of active users.</h5>
+    
+        
+    {% else %}
+    <div id="welcome-div">
+    <img id="foodie-art" src="{% static 'foodie\images\foodscale_bw.png' %}" alt="Foodie art">
+
+    <h1>Welcome to Foodie</h1>
+    <br>
+    <p>This is an app where you can insert your weight and calories. It will thelp you understand the relationship between your calorie intake and weight variation.</p>
+    <br>
+    <h5>Please <span><a class="text-decoration-none" href="{% url 'foodie:login' %}">Log In</a></span> or <a class="text-decoration-none" href="{% url 'foodie:register' %}">Register</a>
+        an account to see more info.</h5>
+
+    </div>
+
+    
+    
+    {% endif %}
+
+
+
+    <script src="{% static 'foodie/script_index.js' %}"></script>
+{% endblock %}
+

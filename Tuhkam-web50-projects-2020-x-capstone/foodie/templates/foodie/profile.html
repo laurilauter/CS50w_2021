@@ -1,0 +1,40 @@
+{% extends "foodie/layout.html" %}
+
+
+{% block body %}
+
+    {% load static %}
+    
+    <div id="bigbox">
+    <!-- from profile.html -->
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modal-title" class="modal-title">Record your activity for today.</h4>
+            </div>
+            <div class="modal-body" id="modal-body">
+
+            </div>
+
+            <div class="modal-body" id="modal-body2">
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" id="close-modal-btn" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+<script src="{% static 'foodie/script.js' %}"></script>
+{% endblock %}

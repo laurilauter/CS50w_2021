@@ -1,0 +1,17 @@
+{% block content %}
+<header>
+  <nav class="topnav">
+    <a class="brand" href="{{ url_for('index') }}">BookWorm</a>
+    <a href="{{ url_for('books') }}">Search</a>
+    
+    <div class="topnav-right">
+        {% if not session.get('logged_in') %}
+        <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+        <a href="{{ url_for('logout') }}">Logout {{ session['username'] }}</a>
+        {% endif %}
+
+    </div>
+  </nav>
+</header>
+{% endblock %}

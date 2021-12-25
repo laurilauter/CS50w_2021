@@ -1,0 +1,33 @@
+  
+{% extends "encyclopedia/layout.html" %}
+
+
+{% block title %}
+{{ message }}
+{% endblock %}
+
+{% block body %}
+
+<h2>{{ message }}</h2>
+    <form action="{% url 'edit_entry' title %}" method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="EntryForm">
+        {{ form.title.errors }}
+        <!--- <label for="{{ form.title.id_for_label }}">Title:</label><br>--->
+        {{ form.title.as_hidden }}<br>
+        </div>
+
+        <div class="EntryForm">
+        {{ form.content.errors }}
+        <label for="{{ form.content.id_for_label }}">content:</label><br>
+        {{ form.content }}<br>
+        </div>
+        <br>
+
+        <input type="submit" value="Save">
+        
+    </form>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+  {% extends 'layout.html' %}
+
+  {% block content %}
+
+  <div class="title">
+  <h1>{{ titlep }}</h1>
+  <p>{{ description }}</p>
+  </div>
+
+
+  <div class="parent">
+            <div class="child1">
+              <div class="img">
+              <img width="200" src="http://covers.openlibrary.org/b/isbn/{{ booklist[1] }}-M.jpg" onerror="this.parentNode.removeChild(this);">
+            </div>
+                    <ul>
+                      <li><h4>{{ booklist[2] }}</h4></li>
+                      <li>Author:  {{ booklist[3] }}</li><br>
+                      <li>Year:  {{ booklist[4] }}</li><br>
+                      <li>ISBN:  {{ booklist[1] }}</li><br>
+                      <li>Average Rating: {{ booklist[5] }}</li><br>
+                      <li>Ratings count: {{ booklist[6] }}</li>
+                    </ul>
+
+            </div>
+
+            <div class="child2">
+
+                    <h3>Write a review</h3>
+
+                    <form action="{{ url_for('book', book_id=booklist[0]) }}" method="post">
+                
+                  
+                    <p>Your rating</p>
+                
+                    <input type="radio" id="1" name="rating" value="1">
+                    <label for="1">1</label>
+                    <input type="radio" id="2" name="rating" value="2">
+                    <label for="2">2</label>
+                    <input type="radio" id="3" name="rating" value="3">
+                    <label for="3">3</label>
+                    <input type="radio" id="4" name="rating" value="4">
+                    <label for="4">4</label>
+                    <input type="radio" id="5" name="rating" value="5">
+                    <label for="5">5</label><br>
+                    <textarea name="review">What do you think of this book?
+                    </textarea><br>
+                
+                    <button class="btn" type="submit">Post review</button>
+                    
+                
+                    </form>
+                    <br>
+                    <hr class="dotted">
+              
+                
+                    <h3>Reviews</h3>
+                
+                      {% if not reviews %}
+                      <p>Sorry, nothing found.</p>
+                      {% else %}
+                
+                      <table>
+                          <thead>
+                              <td>Name</td>
+                            <td>Review</td>
+                            <td>Rating</td>
+                          </thead>        
+                          {% for name, review, rating in reviews %}
+                            <tr>
+                                <td><h4>{{ name }}</h4></td>
+                                <td>{{ review }}</td>
+                                <td>{{ rating }}</td>
+                            </tr>
+                          {% endfor %}
+                      </table>
+                      
+                      {% endif %}
+          
+          
+            
+
+              
+            </div>
+  </div>
+
+  {% endblock %}
+  
+    
+
+    
+
+      
+        
+
+
+    
+    
+
+
+
+
+    

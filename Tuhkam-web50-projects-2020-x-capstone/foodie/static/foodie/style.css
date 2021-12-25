@@ -1,0 +1,112 @@
+body {
+    margin: 0px;
+}
+
+#body-div {
+    margin-top: 20px;
+    /*
+    text-align: center;
+    */
+}
+
+#bio_btn, #save_bio_btn {
+    margin: 10px;
+}
+
+
+
+#welcome-div {
+    text-align: center;
+}
+
+#foodie-art {
+    width: 100%;
+    max-width: 20vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3vw;
+}
+
+#bio_textarea {
+    padding: 6px 10px;
+    box-sizing: border-box;
+    border: 2px solid #0275d8;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+/*
+This applies to profile view container*/
+#profile-div-right {
+    max-width: 80%;
+    padding: 10px 10px;
+    margin-top: auto;
+}
+
+#profile-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 20px 0px;
+}
+
+
+/*
+This applies to homescreen containers*/
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 20px 0px;
+}
+
+.profile-div-right {
+    max-width: 80%;
+    padding-left: 10px;
+    margin-top: auto;
+}
+
+@media only screen and (max-width: 350px) {
+
+    .profile-container {
+        flex-direction: column;
+    }
+
+    #profile-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+  }
+
+
+
+
+/*
+Make chart scrollable horizontally
+*/
+
+#display-div {
+    position: relative;
+}
+
+#canvas-container {
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    #display-div {
+        position: flex;
+        overflow-x: auto;
+    }
+
+    #canvas-container {
+        min-width: 516px;
+    }
+  }
+
+
+

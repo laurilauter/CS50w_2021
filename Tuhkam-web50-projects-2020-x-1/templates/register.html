@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="title">
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
+      </div>
+
+          <div class="parent">
+            
+            <form action="{{ url_for('register') }}" method="post">
+
+              <div>
+                <input type="text" name="name" placeholder="Your name">
+              </div>
+
+              <br>
+
+              <div>
+                <input type="text" name="email" placeholder="Email address">
+              </div>
+
+              <br>
+
+              <div>
+                <input type="password" name="password" placeholder="Choose a password">
+              </div>
+
+              <br>
+
+              <div>
+                  <button class="btn" type="submit">SIGN UP</button>
+              </div>
+
+            </form>
+
+          </div>
+{% endblock %}
